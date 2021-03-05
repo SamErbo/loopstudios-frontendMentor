@@ -10,13 +10,13 @@
     // width: 327px;
     height: 224px;
 
-    background-image: url("/images/mobile/image-interactive.jpg");
+    background-image: url("../../images/mobile/image-interactive.jpg");
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
 
     @include breakpoint-up(small) {
-      background-image: url("/images/desktop/image-interactive.jpg");
+      background-image: url("../../images/desktop/image-interactive.jpg");
       width: 734px;
       height: 504px;
     }
