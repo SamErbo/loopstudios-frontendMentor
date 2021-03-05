@@ -1,0 +1,103 @@
+.footer {
+  height: 29.375rem; //470px;
+  background-color: $Black;
+  padding: 3.5rem; //56px;
+  text-align: center;
+
+  @include breakpoint-up(medium) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+
+    grid-template-areas: "logo social-link" "menu copyright";
+
+    text-align: start;
+
+    padding: 2.875rem 10.065rem; //46px 161px;
+    height: 10rem; //160px;
+  }
+
+  &__logo {
+    img {
+      width: 9rem; //144px;
+      height: 1.5625rem; //25px;
+    }
+
+    @include breakpoint-up(medium) {
+      grid-area: logo;
+      align-self: center;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    margin: 2.3125rem 0; //37px 0;
+
+    @include breakpoint-up(medium) {
+      grid-area: menu;
+      flex-direction: row;
+      margin: 0;
+      align-self: center;
+    }
+    & a {
+      color: inherit;
+      position: relative;
+
+      @include breakpoint-up(medium) {
+        font-size: 0.75rem;
+
+        &::before {
+          content: "";
+          display: block;
+          height: 0.125rem; //2px;
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: -0.625rem; //-10px
+        }
+        &:hover {
+          &::before {
+            background: $white;
+          }
+        }
+      }
+      &:not(:last-child) {
+        margin-bottom: 1.8125rem; //29px;
+        @include breakpoint-up(medium) {
+          margin-right: 2.125rem;
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  .social__links {
+    margin-top: 0.5625rem;
+    margin-bottom: 0.5625rem;
+    @include breakpoint-up(medium) {
+      grid-area: social-link;
+      margin: 0;
+      align-self: center;
+      justify-self: end;
+    }
+    & a {
+      &:not(:last-child) {
+        margin-right: 1.0625rem;
+      }
+      & img {
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+    }
+  }
+
+  & .copyright {
+    font-size: 0.5875rem;
+    @include breakpoint-up(medium) {
+      grid-area: copyright;
+      align-self: center;
+      justify-self: end;
+    }
+  }
+}

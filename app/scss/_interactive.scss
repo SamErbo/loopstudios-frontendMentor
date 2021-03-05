@@ -1,0 +1,71 @@
+.interactive {
+  margin-top: 95px;
+  position: relative;
+
+  @include breakpoint-up(medium) {
+    margin: 160px 0;
+  }
+
+  &__img {
+    // width: 327px;
+    height: 224px;
+
+    background-image: url("/images/mobile/image-interactive.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    @include breakpoint-up(small) {
+      background-image: url("/images/desktop/image-interactive.jpg");
+      width: 734px;
+      height: 504px;
+    }
+
+    @include breakpoint-up(medium) {
+      display: inline-block;
+    }
+  }
+
+  &__text {
+    background-color: $white;
+    text-align: center;
+    margin-top: 3.0625rem; // 49px
+
+    @include breakpoint-up(small) {
+      margin: 0 auto;
+      // margin-left: auto;
+      // margin-right: auto;
+
+      width: 39.3125rem; //629px;
+      //   height: 25.6875rem; //411px;
+      padding: 5.9375rem; //95px
+      //   padding: 3.28% 6.6%;
+      // border: 1px solid red;
+      // position: absolute;
+    }
+    @include breakpoint-up(medium) {
+      display: inline-block;
+      position: absolute;
+      top: 272px;
+      right: 23px;
+    }
+    .title {
+      color: $Black;
+      text-transform: uppercase;
+      margin-bottom: 2rem; //32px
+      font-size: $font-lg;
+      font-family: "Josefin Sans", sans-serif;
+
+      @include breakpoint-up(medium) {
+        font-size: $font-xl;
+      }
+    }
+    .desc {
+      color: $veryDarkGray;
+      line-height: 1.5;
+      @include breakpoint-up(medium) {
+        text-align: left;
+      }
+    }
+  }
+}
